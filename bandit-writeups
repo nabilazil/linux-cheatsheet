@@ -7,3 +7,19 @@
   - `cat` to read file content
   - Home directory navigation
 
+------------------------------------------------------------------------------------
+
+## Level 1 → 2
+- **Challenge:** File named `-`
+- **Problem:** `-` treated as stdin/flag
+- **Solution:** `cat ./-` (or `cat -- -`)
+- **Learned:** How to handle special filenames in CLI
+
+------------------------------------------------------------------------------------
+
+## Level 2 → 3
+- **Challenge:** File named `--spaces in this filename--`
+- **Problem:** Spaces split arguments in bash
+- **Solution:** `cat "./--spaces in this filename--"` (or Tab completion)
+- **Learned:** How to handle spaces in filenames using quotes or escape characters
+
