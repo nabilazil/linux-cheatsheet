@@ -20,6 +20,7 @@ My Linux commands reference for cybersecurity learning
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `cat` | View file content | `cat notes.txt` |
+| `./` | Explicit current directory reference / Bypass special names | `cat ./-`, `./script.sh` |
 
 ## Search & Filter
 | Command | Purpose | Example |
