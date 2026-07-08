@@ -1,6 +1,13 @@
 # linux-cheatsheet 🐧
 My Linux commands reference for cybersecurity learning
 
+## Shell Operators & Redirection
+| Symbol | Name | Purpose | Example |
+|--------|------|---------|---------|
+| `&` | Background Operator | Run command in background | `sleep 10 &` |
+| `&&` | Logical AND Operator | Run second command only if first succeeds | `mkdir test && cd test` |
+| `>` | Output Redirection (Overwrite) | Write output to file (erase old content) | `ls > list.txt` |
+| `>>` | Output Redirection (Append) | Add output to end of file (keep old) | `echo "new" >> log.txt` |
 
 ## Navigation
 | Command | Purpose | Example |
@@ -13,3 +20,22 @@ My Linux commands reference for cybersecurity learning
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `cat` | View file content | `cat notes.txt` |
+
+## Search & Filter
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `grep` | Search for text in files | `grep "THM" access.log` |
+| `find` | Search for files/directories by name, type, size, etc. | `find /home -name "file.txt"`, `find . -type f -size +10M` |
+
+## Remote Access (SSH)
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `ssh user@host` | Connect to remote server (default port 22) | `ssh kali@192.168.1.10` |
+| `ssh user@host -p port` | Connect to custom port | `ssh bandit0@bandit.labs.overthewire.org -p 2220` |
+| `ssh -i key.pem user@host` | Connect with SSH key | `ssh -i aws-key.pem ubuntu@ec2-xx-xx.com` |
+**Key Points:**
+- Default SSH port: `22`
+- Custom port: use `-p [port_number]`
+- Password typing: **invisible** (no characters shown)
+- SSH = Secure Shell ← encrypted remote access to Linux servers
+ 
