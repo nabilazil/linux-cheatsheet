@@ -1,7 +1,7 @@
 ## Bandit: Level 0 → 1
 - **Goal:** Find password in `readme`
 - **Commands:** `ssh`, `ls`, `cat`
-- **Password found:** `[دونو هنا]`
+- **Password found:** `[6y2kwnwK6grgvwvpLaa2T1cpFEKOhNR]`
 - **Learned:** 
   - SSH connection with custom port
   - `cat` to read file content
