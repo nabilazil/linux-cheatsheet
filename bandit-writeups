@@ -29,4 +29,4 @@
 - **Goal:** Find password in a hidden file inside `inhere/`
 - **Commands:** `cd`, `ls -a`, `cat`
 - **Key Concept:** Linux hidden files start with `.` → require `ls -a` to be visible
-- **Solution Path:** `cd inhere` → `ls -a` → `cat ./.[filename]`
+- **Solution Path:** `cd inhere` → `ls -a` → `cat ./ [filename]`
