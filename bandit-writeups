@@ -30,3 +30,13 @@
 - **Commands:** `cd`, `ls -a`, `cat`
 - **Key Concept:** Linux hidden files start with `.` → require `ls -a` to be visible
 - **Solution Path:** `cd inhere` → `ls -a` → `cat ./ [filename]`
+
+
+## Level 4 → 5
+- **Goal:** Find the only human-readable file in `inhere/`
+- **Commands:** `cd`, `file`, `cat`, `reset`
+- **Key Concept:** `file` identifies file types → look for `ASCII text` or `UTF-8`
+- **Solution Path:** `cd inhere` → `file ./*` → `cat ./[text-file]`
+- **Tip:** If terminal breaks after `cat` on binary file → run `reset`
+
+------------------------------------------------------------------------------------
