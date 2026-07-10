@@ -25,6 +25,11 @@ My Linux commands reference for cybersecurity learning
 | `cat` | View file content | `cat notes.txt` |
 | `./` | Explicit current directory reference / Bypass special names | `cat ./-`, `./script.sh` |
 
+## File Information & Analysis
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `file` | Identify file type (text, binary, script) | `file ./*` |
+
 ## Search & Filter
 | Command | Purpose | Example |
 |---------|---------|---------|
