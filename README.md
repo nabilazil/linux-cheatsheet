@@ -13,8 +13,11 @@ My Linux commands reference for cybersecurity learning
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `pwd` | Show current path | `pwd` → `/home/user` |
-| `ls` | List contents | `ls -F` |
 | `cd` | Change directory | `cd folder1`, `cd ..` |
+| `ls` | List files (non-hidden only) | `ls` |
+| `ls -a` | List ALL files (including hidden) | `ls -a` |
+| `ls -la` | List all files with details (permissions, size, date) | `ls -la` |
+| `ls -lh` | List files in human-readable format | `ls -lh` |
 
 ## File Operations
 | Command | Purpose | Example |
