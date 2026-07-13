@@ -9,6 +9,7 @@ My Linux commands reference for cybersecurity learning
 | `>` | Output Redirection (Overwrite) | Write output to file (erase old content) | `ls > list.txt` |
 | `>>` | Output Redirection (Append) | Add output to end of file (keep old) | `echo "new" >> log.txt` |
 
+
 ## Navigation
 | Command | Purpose | Example |
 |---------|---------|---------|
@@ -19,16 +20,19 @@ My Linux commands reference for cybersecurity learning
 | `ls -la` | List all files with details (permissions, size, date) | `ls -la` |
 | `ls -lh` | List files in human-readable format | `ls -lh` |
 
+
 ## File Operations
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `cat` | View file content | `cat notes.txt` |
 | `./` | Explicit current directory reference / Bypass special names | `cat ./-`, `./script.sh` |
 
+
 ## File Information & Analysis
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `file` | Identify file type (text, binary, script) | `file ./*` |
+
 
 ## Search & Filter
 | Command | Purpose | Example |
@@ -40,6 +44,16 @@ My Linux commands reference for cybersecurity learning
 | `find ./dir -mtime -7` | Find files modified in last 7 days | `find . -mtime +30` |
 | `find / -user [name]` | Find files owned by specific user | `find / -user bandit7` |
 | `find / -group [name]` | Find files by group | `find / -group bandit6` |
+
+
+## Text Processing
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `sort` | Sort lines alphabetically | `sort file.txt` |
+| `uniq` | Remove/flag duplicate lines | `uniq file.txt` |
+| `uniq -u` | Show ONLY unique lines (occur once) | `sort file.txt | uniq -u` |
+| `uniq -c` | Count occurrences of each line | `sort file.txt | uniq -c` |
+
 
 ## Remote Access (SSH)
 | Command | Purpose | Example |
