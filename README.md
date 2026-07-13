@@ -35,6 +35,9 @@ My Linux commands reference for cybersecurity learning
 |---------|---------|---------|
 | `grep` | Search for text in files | `grep "THM" access.log` |
 | `find` | Search for files/directories by name, type, size, etc. | `find /home -name "file.txt"`, `find . -type f -size +10M` |
+| `find` | Search files with multiple conditions | `find ./dir -type f -size 1033c ! -executable` |
+| `find ./dir -name "*.txt"` | Search by name pattern | `find / -name "passwd"` |
+| `find ./dir -mtime -7` | Find files modified in last 7 days | `find . -mtime +30` |
 
 ## Remote Access (SSH)
 | Command | Purpose | Example |
