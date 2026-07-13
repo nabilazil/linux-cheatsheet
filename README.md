@@ -51,8 +51,8 @@ My Linux commands reference for cybersecurity learning
 |---------|---------|---------|
 | `sort` | Sort lines alphabetically | `sort file.txt` |
 | `uniq` | Remove/flag duplicate lines | `uniq file.txt` |
-| `uniq -u` | Show ONLY unique lines (occur once) | `sort file.txt | uniq -u` |
-| `uniq -c` | Count occurrences of each line | `sort file.txt | uniq -c` |
+| `uniq -u` | Show ONLY unique lines (occur once) | `sort file.txt \| uniq -u` |
+| `uniq -c` | Count occurrences of each line | `sort file.txt \| uniq -c` |
 
 
 ## Remote Access (SSH)
