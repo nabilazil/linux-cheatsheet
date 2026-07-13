@@ -40,3 +40,14 @@
 - **Tip:** If terminal breaks after `cat` on binary file → run `reset`
 
 ------------------------------------------------------------------------------------
+
+## Level 5 → 6
+- **Goal:** Find file under `inhere/` matching size, permissions, and type
+- **Commands:** `find`, `file`, `cat`
+- **Key Concept:** `find` chains multiple filters (`-size`, `! -executable`, `-type f`)
+- **Solution Path:** `find ./inhere -type f -size 1033c ! -executable` → `cat [result]`
+- **Tip:** Use `c` suffix for exact bytes, `!` for logical NOT
+
+------------------------------------------------------------------------------------
+
+
