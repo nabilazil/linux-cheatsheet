@@ -67,3 +67,10 @@
 - **Tip:** Never use `cat` on huge files → use `grep` or `less` instead
 
 ------------------------------------------------------------------------------------
+
+## Level 8 → 9
+- **Goal:** Find the only unique line in `data.txt`
+- **Commands:** `sort`, `uniq -u`
+- **Key Concept:** `sort` + `uniq -u` isolates lines that appear exactly once
+- **Solution Path:** `sort data.txt | uniq -u`
+- **Tip:** `uniq` requires sorted input to work correctly
