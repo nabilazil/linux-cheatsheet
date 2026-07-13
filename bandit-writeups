@@ -50,4 +50,13 @@
 
 ------------------------------------------------------------------------------------
 
+## Level 6 → 7
+- **Goal:** Find file owned by bandit7:bandit6, size 33 bytes
+- **Commands:** `find`, `-user`, `-group`, `-size`, `2>/dev/null`
+- **Key Concept:** `find` can filter by owner, group, and size simultaneously
+- **Solution Path:** `find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null` → `cat [result]`
+- **Tip:** `2>/dev/null` suppresses "Permission denied" errors for cleaner output
+
+------------------------------------------------------------------------------------
+
 
