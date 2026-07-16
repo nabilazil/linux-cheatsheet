@@ -85,3 +85,16 @@
   - `grep`: Filters output to find specific patterns (like `=`).
   - `|`: Pipes output from `strings` to `grep`.
 - **Solution Path:** `strings data.txt \| grep "=="`
+
+------------------------------------------------------------------------------------
+
+## Level 10 → 11
+- **Goal:** Decode base64 encoded password in `data.txt`
+- **Commands:** `base64 -d`, `cat`, `|`
+- **Key Concept:** Base64 is an encoding scheme (not encryption) → `base64 -d` decodes it to plain text
+- **Solution Path:** `base64 -d data.txt`
+- **Note:** Always distinguish between Encoding (reversible, no key) vs Encryption (requires key)
+Base64 = تغيير الشكل ماشي حماية.
+المهاجمين كيستعملوه باش "يعقدو" الشوية على الـ Detection.
+المحللين كيستعملو `base64 -d` باش يكشفو الخدعة فـ ثواني.
+فـ Bandit، راه كيعلموك هاد المبدأ: "جرب تفك الترميز قبل ما تخاف".
