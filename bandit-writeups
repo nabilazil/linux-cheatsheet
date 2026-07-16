@@ -74,3 +74,14 @@
 - **Key Concept:** `sort` + `uniq -u` isolates lines that appear exactly once
 - **Solution Path:** `sort data.txt | uniq -u`
 - **Tip:** `uniq` requires sorted input to work correctly
+
+------------------------------------------------------------------------------------
+
+## Level 9 → 10
+- **Goal:** Find password preceded by `=` in binary file `data.txt`
+- **Commands:** `strings`, `grep`, `|` (Pipe)
+- **Key Concept:** 
+  - `strings`: Extracts readable text from binary/mixed files.
+  - `grep`: Filters output to find specific patterns (like `=`).
+  - `|`: Pipes output from `strings` to `grep`.
+- **Solution Path:** `strings data.txt \| grep "=="`
