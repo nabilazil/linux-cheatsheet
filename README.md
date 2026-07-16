@@ -53,6 +53,8 @@ My Linux commands reference for cybersecurity learning
 | `uniq` | Remove/flag duplicate lines | `uniq file.txt` |
 | `uniq -u` | Show ONLY unique lines (occur once) | `sort file.txt \| uniq -u` |
 | `uniq -c` | Count occurrences of each line | `sort file.txt \| uniq -c` |
+| `strings` | Extract text from binary files | `strings data.txt` |
+| `strings \| grep "pattern"` | Find text patterns in binary | `strings data.txt \| grep "=="` |
 
 
 ## Remote Access (SSH)
