@@ -57,6 +57,22 @@ My Linux commands reference for cybersecurity learning
 | `strings \| grep "pattern"` | Find text patterns in binary | `strings data.txt \| grep "=="` |
 
 
+## Encoding & Decoding
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `base64` | Encode data to base64 | `echo "text" \| base64` |
+| `base64 -d` | Decode base64 to plain text | `base64 -d file.txt` |
+| `base64 --decode` | Same as `-d` (long form) | `cat file.txt \| base64 --decode` |
+## Real-World Base64 Usage
+| Context | Purpose | Analyst Action |
+|---------|---------|----------------|
+| Malware Obfuscation | Hide commands from AV/EDR | `base64 -d payload.txt` → reveal true intent |
+| API/Web Payloads | Transport binary as ASCII | Decode to inspect data before processing |
+| Logs/Traffic | Encode suspicious strings | Quick decode to confirm/deny threat |
+| ⚠️ Note | Base64 ≠ Encryption | Anyone can decode it → never use for secrets! |
+
+
+
 ## Remote Access (SSH)
 | Command | Purpose | Example |
 |---------|---------|---------|
