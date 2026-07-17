@@ -98,3 +98,57 @@ Base64 = تغيير الشكل ماشي حماية.
 المهاجمين كيستعملوه باش "يعقدو" الشوية على الـ Detection.
 المحللين كيستعملو `base64 -d` باش يكشفو الخدعة فـ ثواني.
 فـ Bandit، راه كيعلموك هاد المبدأ: "جرب تفك الترميز قبل ما تخاف".
+
+------------------------------------------------------------------------------------
+
+## Level 11 → 12
+- **Goal:** Decode ROT13 encoded password stored in `data.txt`
+- **Commands/Tools:** `tr`, `cat`, `|` (pipe) / CyberChef (ROT13 recipe)
+- **Key Concept:** ROT13 is a symmetric substitution cipher → shifting letters by 13 positions twice returns the original text. It is its own inverse, meaning encode = decode.
+- **Solution Path:** 
+  - **CLI:** `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+  - **Web Tool:** Paste content into [CyberChef](https://gchq.github.io/CyberChef) → Drag "ROT13" to Recipe → Read Output
+- **Tip:** ROT13 is legacy obfuscation, not encryption. CyberChef speeds up the workflow, but `tr` remains essential for SSH-only environments.
+
+
+------------------------------------------------------------------------------------
+
+
+## Level 12 → 13
+- **Goal:** Extract password from a hexdump of a repeatedly compressed file
+- **Commands:** `mktemp -d`, `cp`, `xxd -r`, `file`, `mv`, `gunzip`, `bunzip2`, `tar xvf`, `unxz`, `cat`, `ls`, `rm`
+- **Key Concept:** 
+  - `data.txt` is a hexdump → convert to binary with `xxd -r`
+  - File is nested-compressed (~9 layers) → use `file` to identify type → rename with correct extension → decompress → repeat
+  - Always work in `/tmp` to avoid permission issues in `~`
+- **Step-by-Step Solution:**
+  ```bash
+  # 1. Create secure temp workspace
+  WORKDIR=$(mktemp -d)
+  cd "$WORKDIR"
+  cp ~/data.txt .
+
+  # 2. Convert hexdump to binary
+  xxd -r data.txt data.bin
+
+  # 3. Decompression loop (repeat until ASCII text)
+  file data.bin          # → gzip compressed data
+  mv data.bin data.gz && gunzip data.gz
+
+  file data              # → bzip2 compressed data
+  mv data data.bz2 && bunzip2 data.bz2
+
+  file data              # → gzip compressed data
+  mv data data.gz && gunzip data.gz
+
+  file data              # → POSIX tar archive
+  tar xvf data           # → extracts new file (e.g., data5.bin)
+  ls                     # → check new filename
+  file data5.bin         # → bzip2 compressed data
+  mv data5.bin data5.bz2 && bunzip2 data5.bz2
+
+  # ... continue loop: file → mv → decompress → ls ...
+
+  # Final layer:
+  file [final_file]      # → ASCII text
+  cat [final_file]       # ← ← ← Password revealed!
