@@ -32,6 +32,22 @@ My Linux commands reference for cybersecurity learning
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `file` | Identify file type (text, binary, script) | `file ./*` |
+| `xxd -r` | Reverse hexdump to binary | `xxd -r dump.txt out.bin` |
+| `file` | Identify file type (text, binary, script) | `file data.bin` |
+| `tar xvf` | Extract tar archive (preserves filenames) | `tar xvf archive.tar` |
+| `gunzip` / `bunzip2` / `unxz` | Decompress specific formats | `gunzip file.gz` |
+| `mktemp -d` | Create secure temp directory | `WORKDIR=$(mktemp -d)` |
+| `mv` + decompress | Rename to match tool expectations | `mv data data.gz && gunzip data.gz` |
+
+
+### 🔁 Decompression Loop Cheat Sheet
+| `file` Output          | Command to Run                                      |
+|------------------------|-----------------------------------------------------|
+| `gzip compressed data` | `mv data data.gz && gunzip data.gz`                 |
+| `bzip2 compressed data`| `mv data data.bz2 && bunzip2 data.bz2`              |
+| `POSIX tar archive`    | `tar xvf data` → then run `ls` to find the new file |
+| `XZ compressed data`   | `mv data data.xz && unxz data.xz`                   |
+| `ASCII text`           | `cat data`                                        |
 
 
 ## Search & Filter
@@ -70,6 +86,16 @@ My Linux commands reference for cybersecurity learning
 | API/Web Payloads | Transport binary as ASCII | Decode to inspect data before processing |
 | Logs/Traffic | Encode suspicious strings | Quick decode to confirm/deny threat |
 | ⚠️ Note | Base64 ≠ Encryption | Anyone can decode it → never use for secrets! |
+
+
+## Essential Tools
+| Tool | Purpose | Link |
+|------|---------|------|
+| **CyberChef** | All-in-one encoding/decoding/encryption tool | [gchq.github.io/CyberChef](https://gchq.github.io/CyberChef) |
+| `base64` | CLI Base64 encode/decode | Built-in Linux |
+| `tr` | Character translation (ROT13, etc.) | Built-in Linux |
+| `strings` | Extract text from binary files | Built-in Linux |
+| `grep` | Search patterns in text | Built-in Linux |
 
 
 
