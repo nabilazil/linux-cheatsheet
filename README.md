@@ -28,6 +28,7 @@ My Linux commands reference for cybersecurity learning
 | `./` | Explicit current directory reference / Bypass special names | `cat ./-`, `./script.sh` |
 
 
+
 ## File Information & Analysis
 | Command | Purpose | Example |
 |---------|---------|---------|
@@ -38,6 +39,14 @@ My Linux commands reference for cybersecurity learning
 | `gunzip` / `bunzip2` / `unxz` | Decompress specific formats | `gunzip file.gz` |
 | `mktemp -d` | Create secure temp directory | `WORKDIR=$(mktemp -d)` |
 | `mv` + decompress | Rename to match tool expectations | `mv data data.gz && gunzip data.gz` |
+
+
+## 🔐 File Hashing & Integrity
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `sha256sum` | Generate SHA256 hash (most secure) | `sha256sum filename.ext` |
+| `md5sum` | Generate MD5 hash (legacy) | `md5sum filename.ext` |
+| `sha256sum -c` | Verify hash from file | `sha256sum -c hashes.txt` |
 
 
 ### 🔁 Decompression Loop Cheat Sheet
